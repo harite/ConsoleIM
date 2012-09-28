@@ -77,7 +77,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Command.h" />
+    <ClInclude Include="GoablInfo.h" />
     <ClInclude Include="MessageRepository.h" />
+    <ClInclude Include="OnlineUsers.h" />
     <ClInclude Include="Options.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -86,7 +88,9 @@
   <ItemGroup>
     <ClCompile Include="Command.cpp" />
     <ClCompile Include="ConsoleIM.cpp" />
+    <ClCompile Include="GoablInfo.cpp" />
     <ClCompile Include="MessageRepository.cpp" />
+    <ClCompile Include="OnlineUsers.cpp" />
     <ClCompile Include="Options.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

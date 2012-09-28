@@ -11,66 +11,85 @@ protected:
 	Command();
 };
 
-class LoginCommand : public Command
+class CLoginCommand : public Command
 {
 public:
-	LoginCommand(CUserInfo* ,std::wstring);
-	~LoginCommand();
+	CLoginCommand(CUserInfo* ,std::wstring);
+	~CLoginCommand();
+
+	virtual bool Execute();
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
 	std::wstring m_strUserName;
 };
 
-class SetStateCommond : public Command
+class CSetStateCommond : public Command
 {
 public:
-	SetStateCommond(CUserInfo* pCurrentUser, UserState state);
-	~SetStateCommond();
+	CSetStateCommond(CUserInfo* pCurrentUser, UserState state);
+	~CSetStateCommond();
 
 private:
 	CUserInfo* m_pCurrentUser;
 	UserState m_eState;
 };
 
-class LogoutCommand : public Command
+class CLogoutCommand : public Command
 {
 public:
-	LogoutCommand(CUserInfo* pCurrentUser);
-	~LogoutCommand();
+	CLogoutCommand(CUserInfo* pCurrentUser);
+	~CLogoutCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
 };
 
-class ShowUsersCommand : public Command
+class CShowUsersCommand : public Command
 {
 public:
-	ShowUsersCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser);
-	~ShowUsersCommand();
+	CShowUsersCommand(CUserInfo* pCurrentUser);
+	~CShowUsersCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
-	CUserInfo* m_pOtherUser;
 };
 
-class SendMessageCommand : public Command
+class CSendMessageCommand : public Command
 {
 public:
-	SendMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser);
-	~SendMessageCommand();
+	CSendMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, const std::wstring& strMsg);
+	~CSendMessageCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
 	CUserInfo* m_pOtherUser;
+	std::wstring m_strMsg;
 };
 
 class CMessageRepository;
-class ShowMessageHistoryCommand : public Command
+class CShowMessageHistoryCommand : public Command
 {
 public:
-	ShowMessageHistoryCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, CMessageRepository* pMsgRepository);
-	~ShowMessageHistoryCommand();
+	CShowMessageHistoryCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, CMessageRepository* pMsgRepository);
+	~CShowMessageHistoryCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
@@ -78,11 +97,15 @@ private:
 	CMessageRepository* m_pMsgRespository;
 };
 
-class ReceiveMessageCommand : public Command
+class CReceiveMessageCommand : public Command
 {
 public:
-	ReceiveMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, CMessageRepository* pMsgRepository);
-	~ReceiveMessageCommand();
+	CReceiveMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, CMessageRepository* pMsgRepository);
+	~CReceiveMessageCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
@@ -90,31 +113,43 @@ private:
 	CMessageRepository* m_pMsgRespository;
 };
 
-class HeartBeatCommand : public Command
+class CHeartBeatCommand : public Command
 {
 public:
-	HeartBeatCommand(CUserInfo* pCurrentUser);
-	~HeartBeatCommand();
+	CHeartBeatCommand(CUserInfo* pCurrentUser);
+	~CHeartBeatCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
 };
 
-class RequestOnlineMessageCommand : public Command
+class CRequestOnlineMessageCommand : public Command
 {
 public:
-	RequestOnlineMessageCommand(CUserInfo* pCurrentUser);
-	~RequestOnlineMessageCommand();
+	CRequestOnlineMessageCommand(CUserInfo* pCurrentUser);
+	~CRequestOnlineMessageCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
 };
 
-class ResponseOnlineMessageCommand : public Command
+class CResponseOnlineMessageCommand : public Command
 {
 public:
-	ResponseOnlineMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser);
-	~ResponseOnlineMessageCommand();
+	CResponseOnlineMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser);
+	~CResponseOnlineMessageCommand();
+
+	virtual bool Execute();
+
+	virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;

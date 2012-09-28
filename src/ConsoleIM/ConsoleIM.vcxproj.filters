@@ -36,6 +36,12 @@
     <ClInclude Include="MessageRepository.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GoablInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OnlineUsers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +60,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MessageRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GoablInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OnlineUsers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

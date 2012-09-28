@@ -4,9 +4,12 @@
 class COptions
 {
 public:
-	COptions(std::istream& in);
+	COptions(void);
 	virtual ~COptions(void);
-	void ImportOptions(std::istream& in, std::vector<std::wstring>& optionVector);
-	void ParseOptions(const std::vector<std::wstring>& optionVector, Command& cmd);
+	void ImportOptions(std::wistream& in, std::vector<std::wstring>& optionVector);
+	void ParseOptions(const std::vector<std::wstring>& optionVector, Command** ppCommand);
+
+private:
+	bool IsOption(const std::wstring& arg, const wchar_t* op);
 };
 

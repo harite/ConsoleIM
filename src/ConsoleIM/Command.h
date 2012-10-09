@@ -3,19 +3,19 @@ class CUserInfo;
 class Command
 {
 public:
-	virtual ~Command(void);
 	virtual bool Execute() = 0;
 	virtual std::string GetErrorInfo() = 0;
 	
 protected:
 	Command();
+	virtual ~Command(void);
 };
 
 class CLoginCommand : public Command
 {
 public:
 	CLoginCommand(CUserInfo* ,std::wstring);
-	~CLoginCommand();
+    ~CLoginCommand(){};
 
 	virtual bool Execute();
 	virtual std::string GetErrorInfo();
@@ -29,7 +29,11 @@ class CSetStateCommond : public Command
 {
 public:
 	CSetStateCommond(CUserInfo* pCurrentUser, UserState state);
-	~CSetStateCommond();
+    ~CSetStateCommond(){};
+
+    virtual bool Execute();
+
+    virtual std::string GetErrorInfo();
 
 private:
 	CUserInfo* m_pCurrentUser;
@@ -40,7 +44,7 @@ class CLogoutCommand : public Command
 {
 public:
 	CLogoutCommand(CUserInfo* pCurrentUser);
-	~CLogoutCommand();
+    ~CLogoutCommand(){};
 
 	virtual bool Execute();
 
@@ -54,7 +58,7 @@ class CShowUsersCommand : public Command
 {
 public:
 	CShowUsersCommand(CUserInfo* pCurrentUser);
-	~CShowUsersCommand();
+    ~CShowUsersCommand(){};
 
 	virtual bool Execute();
 
@@ -68,7 +72,7 @@ class CSendMessageCommand : public Command
 {
 public:
 	CSendMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, const std::wstring& strMsg);
-	~CSendMessageCommand();
+    ~CSendMessageCommand(){};
 
 	virtual bool Execute();
 
@@ -85,7 +89,7 @@ class CShowMessageHistoryCommand : public Command
 {
 public:
 	CShowMessageHistoryCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, CMessageRepository* pMsgRepository);
-	~CShowMessageHistoryCommand();
+    ~CShowMessageHistoryCommand(){};
 
 	virtual bool Execute();
 
@@ -101,7 +105,7 @@ class CReceiveMessageCommand : public Command
 {
 public:
 	CReceiveMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser, CMessageRepository* pMsgRepository);
-	~CReceiveMessageCommand();
+    ~CReceiveMessageCommand(){};
 
 	virtual bool Execute();
 
@@ -117,7 +121,7 @@ class CHeartBeatCommand : public Command
 {
 public:
 	CHeartBeatCommand(CUserInfo* pCurrentUser);
-	~CHeartBeatCommand();
+    ~CHeartBeatCommand(){};
 
 	virtual bool Execute();
 
@@ -131,7 +135,7 @@ class CRequestOnlineMessageCommand : public Command
 {
 public:
 	CRequestOnlineMessageCommand(CUserInfo* pCurrentUser);
-	~CRequestOnlineMessageCommand();
+    ~CRequestOnlineMessageCommand(){};
 
 	virtual bool Execute();
 
@@ -145,7 +149,7 @@ class CResponseOnlineMessageCommand : public Command
 {
 public:
 	CResponseOnlineMessageCommand(CUserInfo* pCurrentUser, CUserInfo* pOtherUser);
-	~CResponseOnlineMessageCommand();
+    ~CResponseOnlineMessageCommand(){};
 
 	virtual bool Execute();
 

@@ -56,6 +56,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -76,11 +77,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="ApplicationConfig.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="CommunicateProtocal.h" />
     <ClInclude Include="GoablInfo.h" />
     <ClInclude Include="MessageRepository.h" />
     <ClInclude Include="OnlineUsers.h" />
     <ClInclude Include="Options.h" />
+    <ClInclude Include="SocketHelper.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="UserInfo.h" />
@@ -92,6 +96,7 @@
     <ClCompile Include="MessageRepository.cpp" />
     <ClCompile Include="OnlineUsers.cpp" />
     <ClCompile Include="Options.cpp" />
+    <ClCompile Include="SocketHelper.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>

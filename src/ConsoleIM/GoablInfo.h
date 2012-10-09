@@ -15,5 +15,6 @@ public:
 private:
 	CUserInfo* m_pCurrentUser;
 	unsigned __int32 m_nIpAddress;
+	static CGoablInfo* m_pInstance;
 };
 

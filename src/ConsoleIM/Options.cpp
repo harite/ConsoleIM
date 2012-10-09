@@ -41,10 +41,10 @@ void COptions::ImportOptions(std::wistream& in, std::vector<std::wstring>& optio
 	}
 }
 
-void COptions::ParseOptions(const std::vector<std::wstring>& optionVector, 
+void COptions::ParseOptions(std::vector<std::wstring>& optionVector, 
 							Command** ppCommand)
 {
-	ASSERT(ppCommand == NULL && *ppCommand == NULL);
+	assert(ppCommand == NULL && *ppCommand == NULL);
 	std::vector<std::wstring>::iterator option = optionVector.begin();
 	std::wstring arg = *option;
 

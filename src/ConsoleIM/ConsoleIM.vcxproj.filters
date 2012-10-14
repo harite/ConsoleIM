@@ -16,6 +16,9 @@
     <Filter Include="Command">
       <UniqueIdentifier>{820dbbad-e614-4da7-8290-357f934c34c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{1edef73d-25d7-4a31-bdce-3ead4623619e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -25,9 +28,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Options.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Command.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserInfo.h">
@@ -48,8 +48,20 @@
     <ClInclude Include="CommunicateProtocal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandProcesser.h">
+      <Filter>Command</Filter>
+    </ClInclude>
+    <ClInclude Include="Thread.h">
+      <Filter>Common</Filter>
+    </ClInclude>
     <ClInclude Include="SocketHelper.h">
-      <Filter>Header Files</Filter>
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="CriticalSection.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -60,9 +72,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Options.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UserInfo.cpp">
@@ -77,8 +86,17 @@
     <ClCompile Include="OnlineUsers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Command.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="CommandProcesser.cpp">
+      <Filter>Command</Filter>
+    </ClCompile>
+    <ClCompile Include="Thread.cpp">
+      <Filter>Common</Filter>
+    </ClCompile>
     <ClCompile Include="SocketHelper.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

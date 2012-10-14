@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "OnlineUsers.h"
+#include "UserInfo.h"
 
 COnlineUsers* COnlineUsers::m_pInstance = NULL;
 COnlineUsers::COnlineUsers(void)

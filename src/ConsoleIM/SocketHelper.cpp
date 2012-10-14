@@ -1,6 +1,5 @@
 #include "StdAfx.h"
 #include "Sockethelper.h"
-#include <WinSock2.h>
 
 CSocketHelper::CSocketHelper(void)
 {

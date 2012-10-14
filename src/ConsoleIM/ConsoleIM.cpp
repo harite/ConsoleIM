@@ -2,7 +2,8 @@
 //
 
 #include "stdafx.h"
-#include <iostream>
+#include "CommandProcesser.h"
+#include "Command.h"
 
 void WelecomeMessage()
 {
@@ -13,8 +14,18 @@ void WelecomeMessage()
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+    CCommandProcesser* pProcesser = new CCommandProcesser;
+    pProcesser->Initialize();
+    CSetStateCommond* pCommand = new CSetStateCommond(NULL, STATE_Quit);
+    pProcesser->InsertCommand(pCommand);
+    pProcesser->InsertCommand(pCommand);
+    pProcesser->InsertCommand(pCommand);
+    pProcesser->UnInitialize();
+    delete pProcesser;
+    pProcesser = NULL;
     int i = 0;
     WelecomeMessage();
     std::cin >> i;
+
 	return 0;
 }
